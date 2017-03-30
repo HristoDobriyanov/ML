@@ -13,13 +13,10 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-helpVal = 0;
+predictions = X*theta;
+sqerrors = (predictions - y).^2;
+J = 1/(2*m) * sum(sqerrors);
 
-for iterator=1:(size(y,1))
-	helpVal+= ((theta(1) + theta(2)*X(iterator, 2)) - y(iterator)).^2
-	endfor
-	
-J = 1/(2*(size(y,1)))*helpVal
 	
 % =========================================================================
 
